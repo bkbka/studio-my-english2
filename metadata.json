@@ -1,0 +1,6 @@
+{
+  "name": "English Skills Mastery",
+  "description": "تطبيق تعليمي تفاعلي متكامل لتعليم مهارات اللغة الإنجليزية الأربع (الاستماع، التحدث، القراءة، الكتابة) بمستويات متعددة وتقييم ذكي بالذكاء الاصطناعي.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
