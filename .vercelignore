@@ -1,0 +1,12 @@
+# Local Express entrypoint — on Vercel the Gemini endpoints run as the
+# serverless functions in api/gemini/*.ts, not through this file.
+server.ts
+
+# Build artifacts — Vercel rebuilds the frontend from source with `vite build`.
+dist
+
+# Google AI Studio local metadata.
+assets/.aistudio
+
+# Logs
+*.log
