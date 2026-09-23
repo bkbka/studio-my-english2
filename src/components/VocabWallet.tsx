@@ -146,7 +146,8 @@ export const VocabWallet: React.FC<VocabWalletProps> = ({
               value={newWordInput}
               onChange={(e) => setNewWordInput(e.target.value)}
               placeholder="الكلمة بالإنجليزية (Word)..."
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs font-mono text-white focus:outline-none focus:border-pink-500"
+              dir="ltr"
+              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs font-mono text-white focus:outline-none focus:border-pink-500 text-left"
             />
             <button
               onClick={handleAutoTranslate}

@@ -212,7 +212,8 @@ export const WritingSkill: React.FC<WritingSkillProps> = ({
                 value={essayText}
                 onChange={(e) => setEssayText(e.target.value)}
                 placeholder="Write your response here in English..."
-                className="w-full h-48 bg-slate-950 border border-slate-800 rounded-2xl p-4 text-sm font-mono text-white focus:outline-none focus:border-purple-500 transition resize-y leading-relaxed"
+                dir="ltr"
+                className="w-full h-48 bg-slate-950 border border-slate-800 rounded-2xl p-4 text-sm font-mono text-white focus:outline-none focus:border-purple-500 transition resize-y leading-relaxed text-left"
               />
             </div>
 

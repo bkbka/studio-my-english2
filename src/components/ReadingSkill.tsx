@@ -294,7 +294,10 @@ export const ReadingSkill: React.FC<ReadingSkillProps> = ({
                   className="p-5 bg-slate-950/80 border border-slate-800/80 rounded-2xl space-y-3"
                 >
                   {/* Clickable Words Paragraph */}
-                  <p className="text-base sm:text-lg leading-relaxed text-slate-100 font-serif tracking-wide select-none">
+                  <p
+                    dir="ltr"
+                    className="text-base sm:text-lg leading-relaxed text-slate-100 font-serif tracking-wide select-none text-left"
+                  >
                     {paragraph.split(' ').map((word, wIdx) => (
                       <span
                         key={wIdx}

@@ -337,7 +337,8 @@ export const SpeakingSkill: React.FC<SpeakingSkillProps> = ({
                     value={transcript}
                     onChange={(e) => setTranscript(e.target.value)}
                     placeholder="سوف يظهر كلامك بالإنجليزية هنا عند التحدث، أو يمكنك كتابته مباشرة..."
-                    className="w-full h-24 bg-slate-900 border border-slate-800 rounded-xl p-3 text-sm font-mono text-white focus:outline-none focus:border-amber-500 transition resize-none"
+                    dir="ltr"
+                    className="w-full h-24 bg-slate-900 border border-slate-800 rounded-xl p-3 text-sm font-mono text-white focus:outline-none focus:border-amber-500 transition resize-none text-left"
                   />
                 </div>
 
@@ -569,7 +570,8 @@ export const SpeakingSkill: React.FC<SpeakingSkillProps> = ({
               onChange={(e) => setChatInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSendChatMessage()}
               placeholder="اكتب ردك بالإنجليزية هنا أو استخدم الصوت..."
-              className="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm font-mono text-white focus:outline-none focus:border-amber-500"
+              dir="ltr"
+              className="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm font-mono text-white focus:outline-none focus:border-amber-500 text-left"
             />
 
             <button
