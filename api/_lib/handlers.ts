@@ -86,9 +86,10 @@ All explanations and feedback notes MUST be in Arabic so the student understands
       },
     });
 
-    const jsonText = response.text || '{}';
-    const feedbackData = JSON.parse(jsonText);
-    res.json(feedbackData);
+    if (!response.text) {
+      throw new Error('Gemini returned an empty response (possibly blocked by safety filters)');
+    }
+    res.json(JSON.parse(response.text));
   } catch (error: any) {
     console.error('Error evaluating speaking:', error);
     res.status(500).json({ error: error.message || 'Failed to evaluate speaking' });
@@ -167,8 +168,10 @@ Evaluate the writing thoroughly. Provide corrected version, identify grammar mis
       },
     });
 
-    const jsonText = response.text || '{}';
-    res.json(JSON.parse(jsonText));
+    if (!response.text) {
+      throw new Error('Gemini returned an empty response (possibly blocked by safety filters)');
+    }
+    res.json(JSON.parse(response.text));
   } catch (error: any) {
     console.error('Error evaluating writing:', error);
     res.status(500).json({ error: error.message || 'Failed to evaluate writing' });
@@ -249,7 +252,10 @@ Requirements:
       },
     });
 
-    res.json(JSON.parse(response.text || '{}'));
+    if (!response.text) {
+      throw new Error('Gemini returned an empty response (possibly blocked by safety filters)');
+    }
+    res.json(JSON.parse(response.text));
   } catch (error: any) {
     console.error('Error generating reading:', error);
     res.status(500).json({ error: error.message || 'Failed to generate reading article' });
@@ -294,7 +300,10 @@ Return JSON:
       },
     });
 
-    res.json(JSON.parse(response.text || '{}'));
+    if (!response.text) {
+      throw new Error('Gemini returned an empty response (possibly blocked by safety filters)');
+    }
+    res.json(JSON.parse(response.text));
   } catch (error: any) {
     console.error('Error translating word:', error);
     res.status(500).json({ error: error.message || 'Failed to translate word' });
@@ -342,7 +351,11 @@ Also provide a short Arabic translation of your reply, an optional quick grammar
       },
     });
 
-    res.json(JSON.parse(response.text || '{}'));
+    if (!response.text) {
+      throw new Error('Gemini returned an empty response (possibly blocked by safety filters)');
+    }
+
+    res.json(JSON.parse(response.text));
   } catch (error: any) {
     console.error('Error in speaking chat:', error);
     res.status(500).json({ error: error.message || 'Failed to generate speaking reply' });
